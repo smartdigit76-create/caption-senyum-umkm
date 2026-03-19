@@ -242,7 +242,25 @@
       .section-title {
         font-size: 24px;
       }
-    }
+
+      .popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+      }
+    
   </style>
 </head>
 <body>
@@ -375,11 +393,11 @@
 
     <div id="premiumPopup" class="popup-overlay" style="display: none;">
   <div class="popup-box">
-    <h3>🌟 Upgrade ke Premium</h3>
-    <p>
-      Kesempatan gratis Anda sudah habis. Lanjutkan ke versi premium untuk
-      mendapatkan akses penuh dan hasil caption yang lebih optimal.
-    </p>
+    <h3>🚀 Upgrade ke Premium</h3>
+<p>
+Kesempatan gratis Anda sudah habis.
+Jangan lewatkan peluang meningkatkan penjualan dengan caption yang lebih powerful!
+</p>
 
     <a href="https://wa.me/628565952523" target="_blank" class="btn btn-secondary">
       📲 Upgrade via WhatsApp
