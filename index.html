@@ -102,12 +102,13 @@
   background: #ff7a18;
   color: white;
   border: none;
+  box-shadow: 0 8px 20px rgba(255, 122, 24, 0.3);
 }
 
-    .btn-secondary {
-      background: #25D366;
-      color: white;
-    }
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(255, 122, 24, 0.4);
+}
 
     .section-title {
       font-size: 28px;
@@ -374,8 +375,23 @@
     
 <script>
 function bukaAplikasi() {
-  alert("Sedang membuka Caption Senyum UMKM...");
-  window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342641fcd1cd4-caption-senyum-umkm";
+  let jumlahKlik = localStorage.getItem("jumlahKlik");
+
+  if (!jumlahKlik) {
+    jumlahKlik = 0;
+  }
+
+  jumlahKlik = parseInt(jumlahKlik) + 1;
+  localStorage.setItem("jumlahKlik", jumlahKlik);
+
+  if (jumlahKlik <= 3) {
+    alert("Kesempatan gratis ke-" + jumlahKlik);
+    window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342641fcd1cd4-caption-senyum-umkm";
+  } else {
+    alert("⚠️ Batas gratis sudah habis.\nUpgrade ke Premium untuk lanjut.");
+
+    window.location.href = "https://wa.me/628565952523";
+  }
 }
 </script>
 
