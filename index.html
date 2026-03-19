@@ -19,30 +19,36 @@
 
     .app-header {
   text-align: center;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 
 .logo {
   width: 120px;
   border-radius: 20px;
-  margin-bottom: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
+  animation: fadeIn 0.8s ease;
+    }
+    
     a {
   display: inline-block;
   margin-top: 10px;
-  padding: 12px 20px;
+  padding: 14px 24px;
   background: #25D366;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 30px;
   font-weight: bold;
+  transition: all 0.2s ease;
+    }
+    
+    a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
-    a:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
+    a:active {
+  transform: scale(0.95);
     }
 
     .cta-box {
@@ -68,7 +74,7 @@
     }
 
     .subtitle {
-      font-size: 20px;
+      fobox-shadow0px;
       color: #fff6f2;
       line-height: 1.6;
       max-width: 700px;
@@ -436,11 +442,19 @@ function tutupPopup() {
   document.getElementById("premiumPopup").style.display = "none";
 }
 
-  function resetKlik() {
+function resetKlik() {
   localStorage.removeItem("jumlahKlik");
   alert("Trial berhasil di-reset!");
-  }
+}
 </script>
+
+<div id="premiumPopup" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <h2>Upgrade ke Premium 🚀</h2>
+    <p>Kamu sudah mencapai batas gratis.</p>
+    <a href="#" class="btn-premium">Upgrade</a>
+  </div>
+</div>    
     
 </body>
 </html>
