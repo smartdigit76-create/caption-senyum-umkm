@@ -406,6 +406,10 @@ Jangan lewatkan peluang meningkatkan penjualan dengan caption yang lebih powerfu
     <button onclick="tutupPopup()" class="btn btn-primary">
       Tutup
     </button>
+
+    <button onclick="resetKlik()" style="margin-top:10px;">
+  🔄 Reset Trial
+    </button>
   </div>
     </div>
     
@@ -426,11 +430,15 @@ function bukaAplikasi() {
   } else {
     document.getElementById("premiumPopup").style.display = "flex";
   }
-}
 
 function tutupPopup() {
   document.getElementById("premiumPopup").style.display = "none";
 }
+
+  function resetKlik() {
+  localStorage.removeItem("jumlahKlik");
+  alert("Trial berhasil di-reset!");
+  }
 </script>
 
 </body>
