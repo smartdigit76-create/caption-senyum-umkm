@@ -269,6 +269,81 @@
   from {opacity: 0;}
   to {opacity: 1;}
       }
+
+ .popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  width: 90%;
+  max-width: 360px;
+  background: white;
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  animation: scaleIn 0.3s ease;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  color: #ff7a59;
+  font-size: 28px;
+}
+
+.popup-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-premium {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 14px 24px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn-close {
+  margin-top: 12px;
+  padding: 12px 22px;
+  background: #ff7a18;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+      }     
     
   </style>
 </head>
@@ -399,28 +474,27 @@
   by Senyum AI
 </p>
 
-    <div id="premiumPopup" class="popup-overlay" style="display: none;">
-  <div class="popup-box">
-    <h3>🚀 Upgrade ke Premium</h3>
-<p>
-Kesempatan gratis Anda sudah habis.
-Jangan lewatkan peluang meningkatkan penjualan dengan caption yang lebih powerful!
-</p>
+    <div id="premiumPopup" class="popup-overlay">
+  <div class="popup-content">
+    <h2>🚀 Upgrade ke Premium</h2>
 
-    <a href="https://wa.me/628565952523" target="_blank" class="btn btn-secondary">
+    <p>
+      Kesempatan gratis Anda sudah habis.
+      Lanjutkan ke versi premium untuk mendapatkan hasil yang lebih optimal.
+    </p>
+
+    <a href="https://wa.me/628565952523" target="_blank" class="btn-premium">
       📲 Upgrade via WhatsApp
     </a>
 
-    <button onclick="tutupPopup()" class="btn btn-primary">
+    <br>
+
+    <button onclick="tutupPopup()" class="btn-close">
       Tutup
     </button>
-
-    <button onclick="resetKlik()" style="margin-top:10px;">
-  🔄 Reset Trial
-    </button>
   </div>
-    </div>
-    
+</div>
+
 <script>
 function bukaAplikasi() {
   let jumlahKlik = localStorage.getItem("jumlahKlik");
@@ -434,10 +508,11 @@ function bukaAplikasi() {
 
   if (jumlahKlik <= 3) {
     alert("Kesempatan gratis ke-" + jumlahKlik);
-    window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342641fcd1cd4-caption-senyum-umkm";
+    window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342";
   } else {
     document.getElementById("premiumPopup").style.display = "flex";
   }
+}
 
 function tutupPopup() {
   document.getElementById("premiumPopup").style.display = "none";
@@ -449,7 +524,7 @@ function resetKlik() {
 }
 </script>
 
-<div id="premiumPopup" class="popup-overlay" style="display: none;">
+<div id="premiumPopup" class="popup-overlay">
   <div class="popup-content">
     <h2>Upgrade ke Premium 🚀</h2>
     <p>Kamu sudah mencapai batas gratis.</p>
