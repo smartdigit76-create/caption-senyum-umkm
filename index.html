@@ -372,6 +372,24 @@
 <p class="footer">
   by Senyum AI
 </p>
+
+    <div id="premiumPopup" class="popup-overlay" style="display: none;">
+  <div class="popup-box">
+    <h3>🌟 Upgrade ke Premium</h3>
+    <p>
+      Kesempatan gratis Anda sudah habis. Lanjutkan ke versi premium untuk
+      mendapatkan akses penuh dan hasil caption yang lebih optimal.
+    </p>
+
+    <a href="https://wa.me/628565952523" target="_blank" class="btn btn-secondary">
+      📲 Upgrade via WhatsApp
+    </a>
+
+    <button onclick="tutupPopup()" class="btn btn-primary">
+      Tutup
+    </button>
+  </div>
+    </div>
     
 <script>
 function bukaAplikasi() {
@@ -388,10 +406,12 @@ function bukaAplikasi() {
     alert("Kesempatan gratis ke-" + jumlahKlik);
     window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342641fcd1cd4-caption-senyum-umkm";
   } else {
-    alert("⚠️ Batas gratis sudah habis.\nUpgrade ke Premium untuk lanjut.");
-
-    window.location.href = "https://wa.me/628565952523";
+    document.getElementById("premiumPopup").style.display = "flex";
   }
+}
+
+function tutupPopup() {
+  document.getElementById("premiumPopup").style.display = "none";
 }
 </script>
 
