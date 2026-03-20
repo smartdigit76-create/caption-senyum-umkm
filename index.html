@@ -504,21 +504,22 @@
 
 <script>
 function bukaAplikasi() {
-  let jumlahKlik = localStorage.getItem("jumlahKlik");
+    let jumlahKlik = localStorage.getItem("jumlahKlik");
 
-  if (!jumlahKlik) {
-    jumlahKlik = 0;
-  }
+    if (!jumlahKlik) {
+        jumlahKlik = 0;
+    }
 
-  jumlahKlik = parseInt(jumlahKlik) + 1;
-  localStorage.setItem("jumlahKlik", jumlahKlik);
-  updateInfoTrial();
+    jumlahKlik = parseInt(jumlahKlik) + 1;
+    localStorage.setItem("jumlahKlik", jumlahKlik);
+    updateInfoTrial();
 
-  if (jumlahKlik <= 3) {
-  alert("🚀 Percobaan gratis ke-" + jumlahKlik + " dari 3\nYuk manfaatkan Caption Senyum UMKM untuk promosi bisnis kamu!");
-  window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342";
-} else {
-  document.getElementById("premiumPopup").style.display = "flex";
+    if (jumlahKlik <= 3) {
+        alert("🚀 Percobaan gratis ke-" + jumlahKlik + "/3");
+        window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342";
+    } else {
+        document.getElementById("premiumPopup").style.display = "flex";
+    }
 }
 
 function tutupPopup() {
