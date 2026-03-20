@@ -351,9 +351,39 @@
   color: #ffffff;
   opacity: 0.9;
   }   
+
+   .notif-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 999;
+}
+
+   .notif-box {
+  background: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+    .btn {
+  transition: 0.3s;
+}
+
+    .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
   </style>
 </head>
 <body>
+
+  <div id="notifPopup" class="notif-popup">
+  <div class="notif-box" id="notifText"></div>
+  </div>
   
   <div class="app-header">
     <img src="logo-umkm-caption.png" class="logo" alt="Logo Caption Senyum UMKM" />
@@ -491,7 +521,7 @@
     </p>
 
     <a href="https://wa.me/628565952523" target="_blank" class="btn-premium">
-      📲 Upgrade via WhatsApp
+      🔥 Aktifkan Premium Sekarang
     </a>
 
     <br>
@@ -515,7 +545,7 @@ function bukaAplikasi() {
     updateInfoTrial();
 
     if (jumlahKlik <= 3) {
-        alert("🚀 Percobaan gratis ke-" + jumlahKlik + "/3");
+        tampilkanNotif("🚀 Percobaan gratis ke-" + jumlahKlik + "/3");
         window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342";
     } else {
         document.getElementById("premiumPopup").style.display = "flex";
@@ -541,17 +571,31 @@ function resetKlik() {
 
   let sisa = 3 - parseInt(jumlahKlik);
   let text = "";
-
-  if (sisa > 0) {
-    text = "⏳ Sisa kesempatan: " + sisa + " kali lagi";
-  } else {
-    text = "🚫 Trial habis, silakan upgrade ke premium";
+    
+  if (sisa == 1) {
+    text = "⚠️ Kesempatan terakhir! Gunakan dengan bijak ya!";
+} else if (sisa > 1) {
+    text = "🔥 Kesempatan tersisa: " + sisa + " kali lagi";
+} else {
+    text = "⛔ Trial habis! Upgrade sekarang agar tetap bisa buat caption viral 🔥";
   }
 
   document.getElementById("infoTrial").innerText = text;
   }
 
   updateInfoTrial();
+
+  function tampilkanNotif(pesan) {
+  let popup = document.getElementById("notifPopup");
+  let text = document.getElementById("notifText");
+
+  text.innerText = pesan;
+  popup.style.display = "block";
+
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 2000);
+    }
 </script>
     
 </body>
