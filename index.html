@@ -377,6 +377,18 @@
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
+
+    .warning {
+  animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
   </style>
 </head>
 <body>
@@ -573,15 +585,24 @@ function resetKlik() {
   let text = "";
     
   if (sisa == 1) {
-    text = "⚠️ Kesempatan terakhir! Gunakan dengan bijak ya!";
+    info.classList.add("warning");
+  }
 } else if (sisa > 1) {
     text = "🔥 Kesempatan tersisa: " + sisa + " kali lagi";
 } else {
     text = "⛔ Trial habis! Upgrade sekarang agar tetap bisa buat caption viral 🔥";
   }
 
-  document.getElementById("infoTrial").innerText = text;
-  }
+  let info = document.getElementById("infoTrial");
+info.innerText = text;
+
+if (sisa == 1) {
+    info.style.color = "#ff3b3b"; // merah
+} else if (sisa > 1) {
+    info.style.color = "#ffffff"; // normal
+} else {
+    info.style.color = "#ff0000"; // merah kuat
+}
 
   updateInfoTrial();
 
