@@ -251,6 +251,7 @@
       .section-title {
         font-size: 24px;
       }
+    }
 
       .popup-overlay {
   display: none;
@@ -343,7 +344,7 @@
     opacity: 1;
     transform: scale(1);
   }
-      }     
+}
 
    .trial-info {
   margin-top: 10px;
@@ -369,16 +370,16 @@
   font-size: 14px;
 }
 
-    .btn {
+   .btn {
   transition: 0.3s;
 }
 
-    .btn:hover {
+   .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-    .warning {
+   .warning {
   animation: shake 0.3s infinite;
 }
 
@@ -417,7 +418,6 @@
   📲 Hubungi Kami
       </a>
       </div>
-  </div>
 
       <h2 class="section-title">Cara Menggunakan</h2>
 
@@ -517,21 +517,18 @@
   <p>Coba sekarang dan rasakan kemudahannya</p>
 </div>
 
-    <button onclick="bukaAplikasi()" class="btn btn-primary">
+<button onclick="bukaAplikasi()" class="btn btn-main">
   🚀 Coba Caption Sekarang
-    </button>
+</button>
 
-    <p id="infoTrial" class="trial-info"></p>
+<p id="infoTrial" class="trial-info"></p>
 
-<p class="footer">
-  by Senyum AI
-</p>
-class<div id="premiumPopup" class="popup-overlay">
+<p class="footer">by Senyum AI</p>
+
+<div id="premiumPopup" class="popup-overlay">
   <div class="popup-content">
     <h2>🚀 Upgrade ke Premium</h2>
-
-      <p>Kamu sudah mencapai batas gratis. Upgrade sekarang untuk lanjut menikmati fitur caption yang lebih optimal.
-    </p>
+    <p>Kamu sudah mencapai batas gratis. Upgrade sekarang agar tetap bisa buat caption viral 🔥</p>
 
     <a href="https://wa.me/628565952523" target="_blank" class="btn-premium">
       🔥 Aktifkan Premium Sekarang
@@ -544,7 +541,7 @@ class<div id="premiumPopup" class="popup-overlay">
     </button>
   </div>
 </div>
-
+  
 <script>
 function bukaAplikasi() {
     let jumlahKlik = localStorage.getItem("jumlahKlik");
@@ -603,7 +600,7 @@ if (sisa == 1) {
 } else {
     info.style.color = "#ff0000"; // merah kuat
 }
-  }
+  
   updateInfoTrial();
 
   function tampilkanNotif(pesan) {
