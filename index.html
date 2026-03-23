@@ -83,19 +83,19 @@
     }
 
     .card {
-      background: white;
-      border-radius: 28px;
-      padding: 32px 24px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.15);
-      margin-top: 12px;
-      text-align: center;
-    }
-
+  background: white;
+  border-radius: 28px;
+  padding: 28px 20px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  margin-top: -40px; /* 🔥 ini kunci */
+  text-align: center;
+}
+ 
     .btn {
       display: block;
-      width: 100%;
+      width: 90%;
       max-width: 420px;
-      margin: 14px auto;
+      margin: 12px auto;
       padding: 17px 20px;
       border-radius: 14px;
       text-decoration: none;
@@ -216,9 +216,11 @@
     .mini-note {
   margin-top: 22px;
   font-size: 15px;
-  color: #666;
+  color: #ffffff;
+  opacity: 0.95;
   line-height: 1.7;
   text-align: center;
+  font-weight: 500;
 }
 
     .cta-box {
@@ -548,6 +550,11 @@ function bukaAplikasi() {
     let jumlahKlik = localStorage.getItem("jumlahKlik");
 
     if (!jumlahKlik) {
+        j<script>
+function bukaAplikasi() {
+    let jumlahKlik = localStorage.getItem("jumlahKlik");
+
+    if (!jumlahKlik) {
         jumlahKlik = 0;
     }
 
@@ -557,49 +564,28 @@ function bukaAplikasi() {
 
     if (jumlahKlik <= 3) {
         tampilkanNotif("🚀 Percobaan gratis ke-" + jumlahKlik + "/3");
-        window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342";
+        window.location.href = "https://chatgpt.com/g/...";
     } else {
         document.getElementById("premiumPopup").style.display = "flex";
     }
 }
 
 function tutupPopup() {
-  document.getElementById("premiumPopup").style.display = "none";
+    document.getElementById("premiumPopup").style.display = "none";
 }
 
 function resetKlik() {
-  localStorage.removeItem("jumlahKlik");
-  alert("Trial berhasil di-reset!");
-  updateInfoTrial();
+    localStorage.removeItem("jumlahKlik");
+    alert("Trial berhasil di-reset!");
+    updateInfoTrial();
 }
 
-  function updateInfoTrial() {
-  let jumlahKlik = localStorage.getItem("jumlahKlik");
+function updateInfoTrial() {
+    ...
+}
 
-  if (!jumlahKlik) {
-    jumlahKlik script }
-
-  let sisa = 3 - parseInt(jumlahKlik);
-  let text = "";
-    
-  if (sisa == 1) {
-    info.classList.add("warning");
-  
-} else if (sisa > 1) {
-    text = "🔥 Kesempatan tersisa: " + sisa + " kali lagi";
-} else {
-    text = "⛔ Trial habis! Upgrade sekarang agar tetap bisa buat caption viral 🔥";
-  }
-
-  let info = document.getElementById("infoTrial");
-info.innerText = text;
-
-if (sisa == 1) {
-    info.style.color = "#ff3b3b"; // merah
-} else if (sisa > 1) {
-    info.style.color = "#ffffff"; // normal
-} else {
-    info.style.color = "#ff0000"; // merah kuat
+function tampilkanNotif(pesan) {
+    ...
 }
   
   updateInfoTrial();
