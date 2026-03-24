@@ -214,13 +214,15 @@
     }
 
     .mini-note {
-  margin-top: 22px;
-  font-size: 15px;
-  color: #ffffff;
-  opacity: 0.95;
-  line-height: 1.7;
-  text-align: center;
-  font-weight: 500;
+    margin-top: 22px;
+    text-align: center;
+}
+
+    .mini-note p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
 }
 
     .cta-box {
@@ -375,13 +377,15 @@
   font-size: 14px;
 }
 
-   .btn {
-  transition: 0.3s;
-}
-
-   .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+   .btn-main {
+    background: #ff7a18;
+    color: white;
+    border: none;
+    box-shadow: 0 8px 20px rgba(255, 122, 24, 0.3);hover  
+     
+  .btn-main:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(255, 122, 24, 0.4);
 }
 
    .warning {
@@ -513,13 +517,12 @@
       </div>
 
       <div class="mini-note">
-       <p>Cocok untuk kuliner, fashion, jasa, kerajinan, reseller, dan berbagai jenis usaha UMKM.
-      </p>
-    </div>
+    <p>Cocok untuk kuliner, fashion, jasa, kerajinan, reseller, dan berbagai jenis usaha UMKM.</p>
+</div>
 
-    <div class="cta-box">
-  <h3>🔥 Siap membuat caption viral?</h3>
-  <p>Coba sekarang dan rasakan kemudahannya</p>
+<div class="cta-box">
+    <h3>🔥 Siap membuat caption viral?</h3>
+    <p>Coba sekarang dan rasakan kemudahannya</p>
 </div>
 
 <button onclick="bukaAplikasi()" class="btn btn-main">
@@ -533,12 +536,10 @@
 <div id="premiumPopup" class="popup-overlay">
   <div class="popup-content">
     <h2>🚀 Upgrade ke Premium</h2>
-    <p>Kamu sudah mencapai batas gratis. Upgrade sekarang agar tetap bisa buat caption viral mini-note   <a href="https://wa.me/628565952523" target="_blank" class="btn-premium">
+    <p>Kamu sudah mencapai batas gratis. Upgrade sekarang agar tetap bisa buat caption viral mini-note</p>   
+      <a href="https://wa.me/628565952523" target="_blank" class="btn-premium">
       🔥 Aktifkan Premium Sekarang
-    </a>
-
-    <br>
-
+    <membuat  <bdiv
     <button onclick="tutupPopup()" class="btn-close">
       Tutup
     </button>
@@ -546,11 +547,6 @@
 </div>
   
 <script>
-function bukaAplikasi() {
-    let jumlahKlik = localStorage.getItem("jumlahKlik");
-
-    if (!jumlahKlik) {
-        j<script>
 function bukaAplikasi() {
     let jumlahKlik = localStorage.getItem("jumlahKlik");
 
