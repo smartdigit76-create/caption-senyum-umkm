@@ -548,55 +548,69 @@
 </div>
 <script>
 function bukaAplikasi() {
-    let jumlahKlik = localStorage.getItem("jumlahKlik");
+  let jumlahKlik = localStorage.getItem("jumlahKlik");
 
-    if (!jumlahKlik) {
-        jumlahKlik = 0;
-    }
+  if (!jumlahKlik) {
+    jumlahKlik = 0;
+  }
 
-    jumlahKlik = parseInt(jumlahKlik) + 1;
-    localStorage.setItem("jumlahKlik", jumlahKlik);
-    updateInfoTrial();
+  jumlahKlik = parseInt(jumlahKlik) + 1;
+  localStorage.setItem("jumlahKlik", jumlahKlik);
 
-    if (jumlahKlik <= 3) {
-        tampilkanNotif("🚀 Percobaan gratis ke-" + jumlahKlik + "/3");
-        window.location.href = "https://chatgpt.com/g/...";
-    } else {
-        document.getElementById("premiumPopup").style.display = "flex";
-    }
+  updateInfoTrial();
+
+  if (jumlahKlik <= 3) {
+    tampilkanNotif("🚀 Percobaan gratis ke-" + jumlahKlik + "/3");
+    window.location.href = "https://chatgpt.com/g/g-69b3d6f2aa9c8191bdc342";
+  } else {
+    document.getElementById("premiumPopup").style.display = "flex";
+  }
 }
 
 function tutupPopup() {
-    document.getElementById("premiumPopup").style.display = "none";
-}
-
-function resetKlik() {
-    localStorage.removeItem("jumlahKlik");
-    alert("Trial berhasil di-reset!");
-    updateInfoTrial();
+  document.getElementById("premiumPopup").style.display = "none";
 }
 
 function updateInfoTrial() {
-    ...
+  let jumlahKlik = localStorage.getItem("jumlahKlik");
+
+  if (!jumlahKlik) {
+    jumlahKlik = 0;
+  }
+
+  jumlahKlik = parseInt(jumlahKlik);
+  let sisa = 3 - jumlahKlik;
+  let text = "";
+
+  if (sisa > 1) {
+    text = "⏳ Sisa kesempatan: " + sisa + " kali lagi";
+  } else if (sisa === 1) {
+    text = "⚠️ Kesempatan terakhir! Gunakan dengan bijak ya";
+  } else {
+    text = "⛔ Trial habis, silakan upgrade ke premium";
+  }
+
+  const info = document.getElementById("infoTrial");
+  if (info) {
+    info.innerText = text;
+  }
 }
 
 function tampilkanNotif(pesan) {
-    ...
+  const popup = document.getElementById("notifPopup");
+  const text = document.getElementById("notifText");
+
+  if (popup && text) {
+    text.innerText = pesan;
+    popup.style.display = "block";
+
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 2000);
+  }
 }
-  
-  updateInfoTrial();
 
-  function tampilkanNotif(pesan) {
-  let popup = document.getElementById("notifPopup");
-  let text = document.getElementById("notifText");
-
-  text.innerText = pesan;
-  popup.style.display = "block";
-
-  setTimeout(() => {
-    popup.style.display = "none";
-  }, 2000);
-    }
+updateInfoTrial();
 </script>
 </body>
 </html>
